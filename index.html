@@ -249,7 +249,24 @@
                 networks, Data preprocessing, C#, Selenium, Kubernetes, GCP/AWS</span>
 
             <p>
+                One of my first ever large-scale programming endeavours, the creation of CodeDragon - a
+                <span class='lang-block'>Blockly</span>
+                based platform for learning to write HTML and CSS using real syntax - has been an incredibly rewarding
+                experience. Through our non-profit The CodeDdraig Organisation, our platform, featuring our
+                open-source editor called the <i>"Ffau"</i>, had amassed thousands of users, with hundreds of schools
+                from around the world signed up to use our teacher-specific classroom tools. Beyond the
+                implementation of a Blockly sandbox, I led the creation of a "reverse coding" feature that translated
+                edits to the generated HTML code back into Blockly XML through manual parsing and interpolation
+                steps, as well as creating a custom trending and recommendation algorithm for users to discover new
+                projects, powered by a custom neural network trained on both visual and textual content of the users'
+                projects.
+            </p>
 
+            <p>
+                Alongside the primary product, various other tools created in the process for the non-profit involved
+                custom streaming overlays for our marketing team's livestreams during the pandemic (made using
+                <span class='lang-block'>Unity</span>), and a Kahoot-style classroom game creator made in
+                <span class='lang-block'>React</span> with <span class='lang-block'>Firebase</span>.
             </p>
         </div>
 
@@ -293,7 +310,23 @@
 
             <span class='lang'>Typescript, CSS</span>
 
-            <p></p>
+            <p>
+                When I was chosen to be Editor-in-Chief for my school's Magazines Committee, it became apparent that
+                mandating every designer on the team to purchase a copy of Affinity Publisher would not be a
+                sustainable approach. Therefore, I embarked on the project of creating a free-to-use, open-source piece
+                of publishing software, which seeks not only to implement but to improve upon many of my favourite
+                features of industry-standard software like Affinity Publisher. Effectively just a giant
+                <span class='lang-block'>Typescript</span> project, implementing a program of this scale required
+                creating custom viewport handlers and a component management system from scratch (as I opted not to use
+                React or similar frameworks for this, given the difficulties they introduce with user-defined content).
+                The centrepiece of the program is the custom property relationship definition tool, which takes the
+                traditional concept of "master pages" to new heights, by allowing users to programmatically define -
+                using a visual node-editor language - relationships that certain properties need to take and maintain
+                between each other, such as the first letter of a paragraph being bigger, or the width of an image
+                always being twice its height. This required many iterations to ensure all statements could be
+                fully reversible (i.e. that if a user changed the height, the width could be calculated from this
+                too) and the system could preempt and handle errors in the node 'code' in a user-friendly manner.
+            </p>
         </div>
 
         <div class='experience-item'>
@@ -310,7 +343,17 @@
             <p>
                 Frustrated by the available offering of freelancing websites, we decided to design and develop a new
                 type of freelance platform, whereby the site itself decides on socially-optimal prices for any given
-                pairing of buyer and seller using an ELO-based algorithm.
+                pairing of buyer and seller using an ELO-based algorithm. My role was to design the formulae, which
+                numbered in the hundreds, for various actions on the site, including the effects of user interactions
+                and local economic conditions (supply/demand for a given service on the site) on price, the effects
+                of subject-specific and global ratings on buyer and seller ELO scores, and the effects of ELO on a
+                given price match-up. I implemented these formulae in <span class='lang-block'>Go</span>, while
+                <span class='lang-block'>Node.js</span> was selected for running the actual webserver for the site,
+                with Protobuf streaming between the two servers. As the platform required a wide range of different
+                processing features, ranging from payment handling through <span class='lang-block'>Stripe</span>
+                Connect, to image and video preview and processing, and even video calling capability, we adopted a
+                microservice-based approach with <span class='lang-block'>Kubernetes</span> clusters to manage the
+                connection between them.
             </p>
         </div>
 
