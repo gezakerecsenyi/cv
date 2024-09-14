@@ -3,7 +3,7 @@
         <meta charset='UTF-8'>
         <title>Geza Kerecsenyi - full-stack and algorithm developer</title>
 
-        <link rel="icon" type="image/x-icon" href="/favicon.ico">
+        <link rel="icon" type="image/x-icon" href="/favicon.ico?">
 
         <meta
                 content='width=device-width, initial-scale=1.0'
@@ -75,6 +75,12 @@
                     focussed on web development but also branched out far beyond that. I'm particularly interested in
                     taking on projects that stretch my boundaries and allow me to develop new skills in AI, algorithm
                     development, and software and hardware engineering.
+                </p>
+
+                <p>
+                    If you're interested in learning more about any of the projects listed here, would like to
+                    collaborate on something exciting, or would simply like a chat, please feel free to email me at
+                    the address listed below.
                 </p>
 
                 <p>
@@ -163,12 +169,13 @@
 
             <div class='language-group'>
                 <h4>
-                    AI
+                    ML/AI
                 </h4>
 
                 <ul>
+                    <li class='lang-block'>Python</li>
                     <li class='lang-block'>Tensorflow</li>
-                    <li><span class='lang-block'>Data preprocessing</span> / NLP</li>
+                    <li><span class='lang-block'>Data preprocessing</span> / <span class='lang-block'>NLP</span></li>
                     <li><span class='lang-block'>Neural networks</span> / transformers</li>
                 </ul>
             </div>
@@ -241,7 +248,9 @@
             <span class='lang'>Node.js, Firebase, MongoDB, PHP, Electron, Blockly, Typescript, CSS, React, Neural
                 networks, Data preprocessing, C#, Selenium, Kubernetes, GCP/AWS</span>
 
-            <p></p>
+            <p>
+
+            </p>
         </div>
 
         <div class='experience-item'>
@@ -253,9 +262,24 @@
                 2023 - 2024
             </h6>
 
-            <span class='lang'>Node.js, GCP/AWS, React, CSS</span>
+            <span class='lang'>Node.js, GCP/AWS, React, CSS, Firebase</span>
 
-            <p></p>
+            <p>
+                As part of my interest in linguistics and partially inspired by some (painstakingly-assembled) examples
+                of <a href='https://i.redd.it/lombenpfp2v31.jpg' target='_blank'>etymology trees</a>, I decided to
+                create a tool to automatically generate such graphs (which show words in various different languages
+                that share a common root with a provided word) for arbitrary user input. Intending to use
+                openly-available Wiktionary API data for this purpose, the development turned out much more difficult
+                than initially anticipated, as between parsing the human- (and <i>not</i> machine-)readable Wiktionary
+                entries and throttling requests to avoid rate limiting, the process of requesting all of the
+                necessary data distributed between often hundreds of entry pages required complex GCP configurations
+                to minimise server costs, especially while still figuring out how to solve the frequent infinite-loop
+                issues in a deeply recursive searching environment. In the end, a
+                <span class='lang-block'>Node.js</span> script spawning instances on <span class='lang-block'>GCP</span>
+                to manage the requesting using custom <span class='lang-block'>NLP</span> instructions, while
+                progressively dumping partial results into a livestreamed Firebase Firestore database so the user
+                doesn't just stare at a blank screen until the generation is complete, worked a charm.
+            </p>
         </div>
 
         <div class='experience-item'>
@@ -281,9 +305,13 @@
                 2022
             </h6>
 
-            <span class='lang'>Go, Firebase, MySQL, Node.js, </span>
+            <span class='lang'>Go, Firebase, MySQL, Node.js, Protobuf, GCP/AWS, Stripe, Kubernetes</span>
 
-            <p></p>
+            <p>
+                Frustrated by the available offering of freelancing websites, we decided to design and develop a new
+                type of freelance platform, whereby the site itself decides on socially-optimal prices for any given
+                pairing of buyer and seller using an ELO-based algorithm.
+            </p>
         </div>
 
         <div class='experience-item'>
@@ -295,7 +323,26 @@
                 2024 -
             </h6>
 
-            <p></p>
+            <span class='lang'>Node.js, React, Typescript, Rust, Stripe, Firebase, MySQL</span>
+
+            <p>
+                Initially starting out as a freelancer, I was asked to take over the development team of the
+                Singaporean start-up OpenForum, currently in the process of building a social media platform
+                centering on community interaction and bridging the gap between Western and Asian social networking
+                cultures. Notably, the site itself is styled as a giant platformer game, wherein users browse posts
+                by moving their avatar through a physics-enabled bento grid of content.
+            </p>
+
+            <p>
+                The complexity of this project hinges on the need for user interaction to be at the forefront of all
+                experiences on the platform, which has pushed me both as a developer and a product designer. Ranging
+                from integration of "tipping" of creators through <span class='lang-block'>Stripe</span> Connect, to
+                proximity-based voice-calling features, keeping the site performant while simulating the physics of
+                hundreds of avatars moving at once across dynamically-loaded content has required experimentation in
+                <span class='lang-block'>WASM</span>, a mixed
+                <span class='lang-block'>Rust</span>/<span class='lang-block'>Node.js</span> back-end, and attention
+                to detail at every stage of the development process.
+            </p>
         </div>
 
         <div class='experience-item'>
@@ -383,7 +430,9 @@
             });
 
             tags.forEach(tag => {
-                langMap[tag.innerText] = langMap[tag.innerText] || `hsl(${Math.floor(Math.random() * 360)}, 100%, 50%)`;
+                const hue = Math.floor(Math.random() * 360);
+
+                langMap[tag.innerText] = langMap[tag.innerText] || `hsl(${hue}, 100%, ${(hue < 30 || hue > 200) ? 70 : 50}%)`;
                 tag.style.color = langMap[tag.innerText];
                 tag.style.opacity = '0.9';
 

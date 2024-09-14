@@ -11,6 +11,7 @@ body {
 .header {
     display: flex;
     margin-bottom: 20px;
+    align-items: center;
 }
 
 .profile-pic {
@@ -32,7 +33,7 @@ body {
     }
 
     body {
-        margin: 10px;
+        margin: 20px;
     }
 }
 
@@ -106,6 +107,10 @@ a {
 .language-group ul {
     margin-bottom: 0;
     padding-left: 25px;
+}
+
+.experience-item p {
+    margin-left: 20px;
 }
 
 .experience-item h3 {
