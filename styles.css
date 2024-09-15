@@ -91,6 +91,15 @@ a {
     background-clip: content-box;
 }
 
+code {
+    font-family: inherit;
+    display: inline-block;
+    font-size: 0.75rem;
+    background-color: #2d2d2d;
+    padding: 2px 5px;
+    border-radius: 5px;
+}
+
 .language-group {
     width: 250px;
     min-width: 180px;

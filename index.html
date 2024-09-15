@@ -209,7 +209,7 @@
 
             <div class='language-group'>
                 <h4>
-                    ML/AI
+                    ML, AI, and compilers
                 </h4>
 
                 <ul>
@@ -217,6 +217,7 @@
                     <li class='lang-block'>Tensorflow</li>
                     <li><span class='lang-block'>Data preprocessing</span> / <span class='lang-block'>NLP</span></li>
                     <li><span class='lang-block'>Neural networks</span> / transformers</li>
+                    <li class='lang-block'>Interpreters & compilers</li>
                 </ul>
             </div>
         </div>
@@ -290,7 +291,7 @@
             </h6>
 
             <span class='lang'>Node.js, Firebase, MongoDB, PHP, Electron, Blockly, Typescript, CSS, React, Neural
-                networks, Data preprocessing, C#, Selenium, Kubernetes, GCP/AWS</span>
+                networks, Data preprocessing, C#, Selenium, Kubernetes, GCP/AWS, Interpreters & compilers</span>
 
             <p>
                 One of my first ever large-scale programming endeavours, the creation of CodeDragon - a
@@ -354,26 +355,34 @@
                 2023 -
             </h6>
 
-            <span class='lang'>Typescript, CSS</span>
+            <span class='lang'>Typescript, CSS, Interpreters & compilers</span>
 
             <p>
                 When I was chosen to be Editor-in-Chief for my school's Magazines Committee, it became apparent that
                 mandating every designer on the team to purchase a copy of Affinity Publisher would not be a
                 sustainable approach. Therefore, I was inspired to create a free-to-use, open-source piece
                 of publishing software, which seeks not only to implement but to improve upon many of my favourite
-                features of industry-standard software like Affinity Publisher. In effect one giant
-                <span class='lang-block'>Typescript</span> library, implementing a program of this scale required
-                creating custom viewport handlers and a component management system from scratch (as I opted not to use
-                React or similar frameworks for this, given the difficulties they introduce with user-defined content).
-                The centrepiece of the program is the custom property relationship definition tool, which takes the
-                traditional concept of "master pages" to new heights, by allowing users to programmatically define -
-                using a visual node-editor language - relationships that certain properties need to take and maintain
-                between each other, such as the first letter of a paragraph being bigger, or the width of an image
-                always being twice its height. This required many iterations to ensure all statements could be
-                fully reversible (i.e. that if a user changed the height, the width could be calculated from this
-                too) and the system could preempt and handle errors in the node 'code' in a user-friendly manner. The
-                development of this project is constantly ongoing as the scope of the editor and its functionality
-                expands!
+                features of industry-standard software like Affinity Publisher.
+            </p>
+            <p>
+                The project employs a homebrew object-oriented rendering system in
+                <span class='lang-block'>Typescript</span> to handle the visual viewport, and features layer-based
+                editing functionality with property adjustment alongside WYSIWYG inputs. The core design philosophy
+                of the interface is reusability of components for rapid production capacity following the initial
+                design stage, leading me to implement the concept of "super-masters": effectively, groups of
+                objects - be they text, images, or design elements - which can be dropped into the canvas and follow
+                context-based rules, programmed in by the user through a custom-made node editor environment. This
+                allows for functionality such as using mathematical operators in expressing relationships between
+                objects' positions or the size of various sections of text, which can remain flexible even as the
+                page content changes.
+            </p>
+            <p>
+                The design of the node-based markup language required much consideration from a
+                theoretical standpoint, so as to ensure that all possible "programs" are fully reversible. For
+                instance, in the case a user defines a rule whereby the height of an image depends on a textbox's
+                position, but the user then uses the WYSIWYG functionality to alter the height of the image directly: in
+                this case, the program needs to run the relationship definition "in reverse" to work out what to set the
+                position of the textbox to.
             </p>
         </div>
 
@@ -404,6 +413,38 @@
                 to manage the requesting using a domain-specific <span class='lang-block'>NLP</span> parser, while
                 progressively dumping partial results into a livestreamed Firebase Firestore database so the user
                 doesn't just stare at a blank screen until the generation is complete, worked a charm.
+            </p>
+        </div>
+
+        <div class='experience-item'>
+            <h3>
+                Highscore
+            </h3>
+
+            <h6>
+                2023
+            </h6>
+
+            <span class='lang'>Node.js, Typescript, Interpreters & compilers</span>
+
+            <p>
+                By the invitation of Youtuber <a href='https://www.youtube.com/@GeorgeCollier'>George Collier</a>, I
+                joined the team responsible for developing a musical training mobile application. My particular role
+                was to create a set of back-end tools that allowed the musical team to generate content for the
+                application: specifically, to allow for easy creation of vast sets of pairings of musical notation
+                and their corresponding audio equivalents, as played by MIDI instruments, as well as the metadata
+                required to allow for importing these into the application.
+            </p>
+
+            <p>
+                This undertaking eventually morphed into Highscore, a completely custom, fully-functional programming
+                language based in its syntax loosely on Lisp and PHP, but with various declarative-flavoured
+                elements, specifically designed to handle musical notation and easy reading/writing of large amounts
+                of data. To bring it in line with the strengths of the other team members, I wrote the runtime in
+                Node.js with Typescript, with a command-line utility for running programs written in the
+                <code>.hsc</code> format. This would in turn read through the provided script file, providing standard
+                libraries for all important music-related datasets (keys, modes, notes, etc.), and having support for
+                musical datatypes as primitives and for generating musical engraving and audio through native syntax.
             </p>
         </div>
 
