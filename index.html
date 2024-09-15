@@ -273,30 +273,32 @@
 
         <div class='experience-item'>
             <h3>
-                Etymologeze
+                OpenForum
             </h3>
 
             <h6>
-                2023 - 2024
+                2024 -
             </h6>
 
-            <span class='lang'>Node.js, GCP/AWS, React, CSS, Firebase</span>
+            <span class='lang'>Node.js, React, Typescript, Rust, Stripe, Firebase, MySQL</span>
 
             <p>
-                As part of my interest in linguistics and partially inspired by some (painstakingly-assembled) examples
-                of <a href='https://i.redd.it/lombenpfp2v31.jpg' target='_blank'>etymology trees</a>, I decided to
-                create a tool to automatically generate such graphs (which show words in various different languages
-                that share a common root with a provided word) for arbitrary user input. Intending to use
-                openly-available Wiktionary API data for this purpose, the development turned out much more difficult
-                than initially anticipated, as between parsing the human- (and <i>not</i> machine-)readable Wiktionary
-                entries and throttling requests to avoid rate limiting, the process of requesting all of the
-                necessary data distributed between often hundreds of entry pages required complex GCP configurations
-                to minimise server costs, especially while still figuring out how to solve the frequent infinite-loop
-                issues in a deeply recursive searching environment. In the end, a
-                <span class='lang-block'>Node.js</span> script spawning instances on <span class='lang-block'>GCP</span>
-                to manage the requesting using custom <span class='lang-block'>NLP</span> instructions, while
-                progressively dumping partial results into a livestreamed Firebase Firestore database so the user
-                doesn't just stare at a blank screen until the generation is complete, worked a charm.
+                Initially starting out as a freelancer, I was asked to take over the development team of the
+                Singaporean start-up OpenForum, currently in the process of building a social media platform
+                centering on community interaction and bridging the gap between Western and Asian social networking
+                cultures. Notably, the site itself is styled as a giant platformer game, wherein users browse posts
+                by moving their avatar through a physics-enabled bento grid of content.
+            </p>
+
+            <p>
+                The complexity of this project hinges on the need for user interaction to be at the forefront of all
+                experiences on the platform, which has pushed me both as a developer and a product designer. Ranging
+                from integration of "tipping" of creators through <span class='lang-block'>Stripe</span> Connect, to
+                proximity-based voice-calling features, keeping the site performant while simulating the physics of
+                hundreds of avatars moving at once across dynamically-loaded content has required experimentation in
+                <span class='lang-block'>WASM</span>, a mixed
+                <span class='lang-block'>Rust</span>/<span class='lang-block'>Node.js</span> back-end, and attention
+                to detail at every stage of the development process.
             </p>
         </div>
 
@@ -332,6 +334,35 @@
 
         <div class='experience-item'>
             <h3>
+                Etymologeze
+            </h3>
+
+            <h6>
+                2023 - 2024
+            </h6>
+
+            <span class='lang'>Node.js, GCP/AWS, React, CSS, Firebase</span>
+
+            <p>
+                As part of my interest in linguistics and partially inspired by some (painstakingly-assembled) examples
+                of <a href='https://i.redd.it/lombenpfp2v31.jpg' target='_blank'>etymology trees 🡥</a>, I decided to
+                create a tool to automatically generate such graphs (which show words in various different languages
+                that share a common root with a provided word) for arbitrary user input. Intending to use
+                openly-available Wiktionary API data for this purpose, the development turned out much more difficult
+                than initially anticipated, as between parsing the human- (and <i>not</i> machine-)readable Wiktionary
+                entries and throttling requests to avoid rate limiting, the process of requesting all of the
+                necessary data distributed between often hundreds of entry pages required complex GCP configurations
+                to minimise server costs, especially while still figuring out how to solve the frequent infinite-loop
+                issues in a deeply recursive searching environment. In the end, a
+                <span class='lang-block'>Node.js</span> script spawning instances on <span class='lang-block'>GCP</span>
+                to manage the requesting using custom <span class='lang-block'>NLP</span> instructions, while
+                progressively dumping partial results into a livestreamed Firebase Firestore database so the user
+                doesn't just stare at a blank screen until the generation is complete, worked a charm.
+            </p>
+        </div>
+
+        <div class='experience-item'>
+            <h3>
                 Hourbase
             </h3>
 
@@ -355,37 +386,6 @@
                 Connect, to image and video preview and processing, and even video calling capability, we adopted a
                 microservice-based approach with <span class='lang-block'>Kubernetes</span> clusters to manage the
                 connection between them.
-            </p>
-        </div>
-
-        <div class='experience-item'>
-            <h3>
-                OpenForum
-            </h3>
-
-            <h6>
-                2024 -
-            </h6>
-
-            <span class='lang'>Node.js, React, Typescript, Rust, Stripe, Firebase, MySQL</span>
-
-            <p>
-                Initially starting out as a freelancer, I was asked to take over the development team of the
-                Singaporean start-up OpenForum, currently in the process of building a social media platform
-                centering on community interaction and bridging the gap between Western and Asian social networking
-                cultures. Notably, the site itself is styled as a giant platformer game, wherein users browse posts
-                by moving their avatar through a physics-enabled bento grid of content.
-            </p>
-
-            <p>
-                The complexity of this project hinges on the need for user interaction to be at the forefront of all
-                experiences on the platform, which has pushed me both as a developer and a product designer. Ranging
-                from integration of "tipping" of creators through <span class='lang-block'>Stripe</span> Connect, to
-                proximity-based voice-calling features, keeping the site performant while simulating the physics of
-                hundreds of avatars moving at once across dynamically-loaded content has required experimentation in
-                <span class='lang-block'>WASM</span>, a mixed
-                <span class='lang-block'>Rust</span>/<span class='lang-block'>Node.js</span> back-end, and attention
-                to detail at every stage of the development process.
             </p>
         </div>
 
@@ -430,8 +430,9 @@
                 </li>
 
                 <li>
-                    <strong>Custom, large-scale search indexing algorithm</strong> (2023) ingesting metadata about
-                    YouTube videos to help companies find channels worth sponsoring.
+                    <strong>Large-scale search algorithm</strong> (2023) ingesting metadata about YouTube videos to help
+                    companies find channels worth sponsoring. Required creating a custom indexing solution, including
+                    cache prioritisation and space-efficient fuzzy search functionality.
                     <span class='lang'>Java, PHP, Node.js, Typescript, MySQL</span>
                 </li>
             </ul>
