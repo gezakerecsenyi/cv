@@ -184,6 +184,7 @@
                     <li class='lang-block'>Blockly</li>
                     <li class='lang-block'>Selenium/Puppeteer</li>
                     <li class='lang-block'>Discord</li>
+                    <li class='lang-block'>i18n</li>
                 </ul>
             </div>
 
@@ -593,8 +594,9 @@
                 At ETH Oxford 2025, we competed against hundreds of other teams on various tracks. Given the Web-3
                 theme of this competition, our team of two - my partner working on UI and direction, and myself doing the
                 bulk of the front- and back-end implementation - sought to create a project that incorporated areas of
-                computational cryptography, machine learning, information access, and accessibility. The result of this
-                36-hour sprint was Newscrypt (<a href='https://newscrypt.xyz' target='_blank'>Website 🡥</a>,
+                computational <span class='lang-block'>cryptography</span>, machine learning, information access, and
+                accessibility. The result of this 36-hour sprint was Newscrypt
+                (<a href='https://newscrypt.xyz' target='_blank'>Website 🡥</a>,
                 <a href='http://github.com/gezakerecsenyi/newscrypt' target='_blank'>Github 🡥</a>), a submission to
                 <a href='https://torex.rs/' target='_blank'>Torus' 🡥</a> bounty to create a platform that displayed and
                 analysed ongoing debates on "crypto Twitter".
@@ -609,12 +611,13 @@
                 them. We use locality-sensitive hashing, then further salted and encrypted, to encode an extracted
                 128-component embedding of the user's facial structure, and compare this to the stored encrypted value
                 to see if they match. To boost the accessibility of our site, we also somehow found the time to implement
-                full i18n into five languages, including AI-powered auto-translation of all user- (and LLM-) generated
-                content.
+                full <li class='lang-block'>i18n</li> into five languages, including AI-powered auto-translation of all
+                user- (and LLM-) generated content.
             </p>
             <p>
-                To actually generate the debate summaries, we use the OpenAI API combined with an international news
-                API to generate requests to make from the Twitter API. We then use an agential analysis model - based on
+                To actually generate the debate summaries, we use the <li class='lang-block'>OpenAI API</li> combined
+                with an international news API to generate requests to make from the Twitter API. We then use an
+                agential analysis model - based on
                 <a href='https://storm-project.stanford.edu/research/storm/' target='_blank'>
                     Stanford's experiments with STORM 🡥
                 </a> - employing 24 AI models with 12 distinct "personalities" to understand the input Tweets and news
