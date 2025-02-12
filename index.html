@@ -20,11 +20,11 @@
                 rel='preconnect'
         >
         <link
-                href='https://fonts.googleapis.com/css2?family=PT+Mono&display=swap'
+                href='https://fonts.googleapis.com/css2?family=PT+Mono&family=UnifrakturCook:wght@700&display=swap'
                 rel='prefetch'
         >
         <link
-                href='https://fonts.googleapis.com/css2?family=PT+Mono&display=swap'
+                href='https://fonts.googleapis.com/css2?family=PT+Mono&family=UnifrakturCook:wght@700&display=swap'
                 rel='stylesheet'
         >
 
@@ -162,6 +162,7 @@
 
                 <ul>
                     <li class='lang-block'>MySQL</li>
+                    <li class='lang-block'>Postgres</li>
                     <li><span class='lang-block'>MongoDB</span> / Mongoose</li>
                     <li class='lang-block'>Firebase</li>
                 </ul>
@@ -181,7 +182,7 @@
                     <li class='lang-block'>Socket.io</li>
                     <li class='lang-block'>Google Analytics</li>
                     <li class='lang-block'>Blockly</li>
-                    <li class='lang-block'>Selenium</li>
+                    <li class='lang-block'>Selenium/Puppeteer</li>
                     <li class='lang-block'>Discord</li>
                 </ul>
             </div>
@@ -209,7 +210,7 @@
 
             <div class='language-group'>
                 <h4>
-                    ML, AI, and compilers
+                    ML, AI, and other skills
                 </h4>
 
                 <ul>
@@ -218,6 +219,8 @@
                     <li><span class='lang-block'>Data preprocessing</span> / <span class='lang-block'>NLP</span></li>
                     <li><span class='lang-block'>Neural networks</span> / transformers</li>
                     <li class='lang-block'>Interpreters & compilers</li>
+                    <li class='lang-block'>Cryptography</li>
+                    <li class='lang-block'>Optimization</li>
                 </ul>
             </div>
         </div>
@@ -325,11 +328,11 @@
             </h3>
 
             <h6>
-                2015 -
+                2015 - 2024
             </h6>
 
             <span class='lang'>Node.js, Firebase, MongoDB, PHP, Electron, Blockly, Typescript, CSS, React, Neural
-                networks, Data preprocessing, C#, Selenium, Kubernetes, GCP/AWS, Interpreters & compilers</span>
+                networks, Data preprocessing, C#, Selenium/Puppeteer, Kubernetes, GCP/AWS, Interpreters & compilers</span>
 
             <p>
                 One of my first ever large-scale programming endeavours, the creation of CodeDragon - a
@@ -407,7 +410,7 @@
                     users, bookings, and staff all from once central platform. Developed multiple admin tools and
                     platforms, including scrapers for integrating third-party tools that didn't have open APIs into the
                     centralised dashboard.
-                    <span class='lang'>Node.JS, Firebase, React, MongoDB, OpenAI API, Selenium</span>
+                    <span class='lang'>Node.JS, Firebase, React, MongoDB, OpenAI API, Selenium/Puppeteer</span>
                 </li>
 
                 <li>
@@ -571,6 +574,55 @@
             </p>
         </div>
 
+        <h2 class='section-title'>
+            Hackathons and competitions
+        </h2>
+
+        <div class='experience-item'>
+            <h3>
+                Newscrypt - Track winner
+            </h3>
+
+            <h6>
+                At <a href='https://ethoxford.io/' target='_blank'>ETH Oxford 🡥</a>, Feb 2025
+            </h6>
+
+            <span class='lang'>Typescript, Node.js, Postgres, React, Cryptography, OpenAI API, Data preprocessing, Tensorflow, NLP, Selenium/Puppeteer</span>
+
+            <p>
+                At ETH Oxford 2025, we competed against hundreds of other teams on various tracks. Given the Web-3
+                theme of this competition, our team of two - my partner working on UI and direction, and myself doing the
+                bulk of the front- and back-end implementation - sought to create a project that incorporated areas of
+                computational cryptography, machine learning, information access, and accessibility. The result of this
+                36-hour sprint was Newscrypt (<a href='https://newscrypt.xyz' target='_blank'>Website 🡥</a>,
+                <a href='http://github.com/gezakerecsenyi/newscrypt' target='_blank'>Github 🡥</a>), a submission to
+                <a href='https://torex.rs/' target='_blank'>Torus' 🡥</a> bounty to create a platform that displayed and
+                analysed ongoing debates on "crypto Twitter".
+            </p>
+            <p>
+                We went well beyond the initial spec in our creation, aiming to integrate multiple themes of the hackathon
+                beyond the simple platform that was requested. One feature that took particular innovation was our
+                <span class='spooky'>custom authentication</span> (sound scary, I know - but don't worry, it's thoroughly
+                proven/vetted) system: the <i>HUMAN Handshake</i>. This involves using face authentication in place of
+                a username, thereby ensuring a liveness check at every sign-in to prevent bot accounts contributing on
+                the website's forum feature. To maintain user security, their facial data is never seen by anyone except
+                them. We use locality-sensitive hashing, then further salted and encrypted, to encode an extracted
+                128-component embedding of the user's facial structure, and compare this to the stored encrypted value
+                to see if they match. To boost the accessibility of our site, we also somehow found the time to implement
+                full i18n into five languages, including AI-powered auto-translation of all user- (and LLM-) generated
+                content.
+            </p>
+            <p>
+                To actually generate the debate summaries, we use the OpenAI API combined with an international news
+                API to generate requests to make from the Twitter API. We then use an agential analysis model - based on
+                <a href='https://storm-project.stanford.edu/research/storm/' target='_blank'>
+                    Stanford's experiments with STORM 🡥
+                </a> - employing 24 AI models with 12 distinct "personalities" to understand the input Tweets and news
+                articles, debate against itself using the arguments it found presented online, and finally present an
+                analysis of which ideas stood up better or worse than others.
+            </p>
+        </div>
+
         <script>
             Array
                     .from(document.getElementsByClassName('lang'))
@@ -597,8 +649,6 @@
             let isPersisting = false;
 
             document.body.addEventListener('click', (e) => {
-                console.log(e.target, e.target.classList);
-
                 if (!e.target.classList.contains('lang-block')) {
                     tags.forEach(e => {
                         e.style.opacity = '0.9';
